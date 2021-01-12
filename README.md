@@ -1,24 +1,44 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##### Prerequisites
 
-* Ruby version
+The setups steps expect following tools installed on the system.
 
-* System dependencies
+- Github
+- Ruby [2.6.6](https://github.com/organization/project-name/blob/master/.ruby-version#L1)
+- Rails [6.0.0](https://github.com/organization/project-name/blob/master/Gemfile#L12)
 
-* Configuration
+##### 1. Check out the repository
 
-* Database creation
+```bash
+https://github.com/Sreejith9409/login_app.git
+```
 
-* Database initialization
+##### 2. Do Bundle install
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle install
+```
 
-* Deployment instructions
+##### 3. Run Migration
 
-* ...
+
+```bash
+rails db:migrate
+```
+
+
+
+##### 4. Start the Rails server
+
+You can start the rails server using the command given below.
+
+```ruby
+bundle exec rails s
+```
+
+And now you can visit the site with the URL http://localhost:3000
+
+```
