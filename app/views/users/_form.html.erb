@@ -1,0 +1,41 @@
+<%= bootstrap_form_for(@user) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :fname %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :lname %>
+  </div>
+
+  <div class="field">
+    <%= form.date_select :bdate %>
+  </div>
+
+  <div class="field">
+    <%= form.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.select :gender, User::GENDER_ARR %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
