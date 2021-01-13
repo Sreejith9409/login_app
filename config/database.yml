@@ -1,25 +1,60 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
+# MySQL (default setup).  Versions 4.1 and 5.0 are recommended.
 #
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
+# Install the MySQL driver:
+#   gem install mysql
+# On MacOS X:
+#   gem install mysql -- --include=/usr/local/lib
+# On Windows:
+#   gem install mysql
+#       Choose the win32 build.
+#       Install MySQL and put its /bin directory on your path.
 #
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+# And be sure to use new-style password hashing:
+#   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+default: 
+  adapter: mysql2
+  host: localhost
+  database: login_app
+  port: 3306
+  username: root
+  password:
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  min_messages: ERROR
 
-development:
-  <<: *default
-  database: db/login_app.sqlite3
+development: 
+  adapter: mysql2
+  host: localhost
+  database: login_app
+  port: 3306
+  username: root
+  password:
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  min_messages: ERROR
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/login_app.sqlite3
+production: 
+  adapter: mysql2
+  host: localhost
+  database: login_app
+  port: 3306
+  username: root
+  password:
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  min_messages: ERROR
 
-production:
-  <<: *default
-  database: db/login_app.sqlite3
+test: 
+  adapter: mysql2
+  host: localhost
+  database: login_app
+  port: 3306
+  username: root
+  password:
+  encoding: utf8
+  reconnect: false
+  pool: 10
+  min_messages: ERROR
