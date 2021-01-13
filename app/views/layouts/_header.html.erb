@@ -14,7 +14,10 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <% if logged_in?%>
+        <% if logged_in? %>
+          <li>
+            <p style="background-color: red">You are logged in as <%= current_user.name %></p>
+          </li>
           <li>
             <%= link_to "Logout", '/logout', method: :get %>
           </li>

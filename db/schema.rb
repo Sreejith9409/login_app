@@ -12,13 +12,27 @@
 
 ActiveRecord::Schema.define(version: 2021_01_12_132052) do
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.date "bdate"
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", limit: 32
+    t.string "last_name", limit: 32
+    t.boolean "delete_flag", default: false
     t.string "email"
     t.integer "age"
     t.string "gender"
+    t.string "login"
+    t.string "crypted_password"
+    t.string "salt", limit: 40
+    t.string "home_number", limit: 20
+    t.string "mobile_number", limit: 20
+    t.string "work_number", limit: 20
+    t.string "fax_number", limit: 20
+    t.string "other_numbers", limit: 64
+    t.string "address", limit: 128
+    t.string "city"
+    t.string "state"
+    t.bigint "pin_code"
+    t.string "country"
+    t.string "auth_token"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

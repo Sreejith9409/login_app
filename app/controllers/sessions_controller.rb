@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.where(login: params[:login])
-    if @user && @user.authenticate(params[:password])
+    @user = User.where("login = ? or email = ?", params[:email_or_login], params[:email_or_login]).first
+    if @user && @user.authenticate?(params[:password])
       session[:user_id] = @user.id
       redirect_to '/users'
     else
