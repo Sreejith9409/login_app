@@ -37,7 +37,7 @@ development:
 
 production: 
   adapter: mysql2
-  host: localhost
+  host: '127.0.0.1'
   database: login_app
   port: 3306
   username: root
@@ -49,7 +49,7 @@ production:
 
 test: 
   adapter: mysql2
-  host: localhost
+  host: '127.0.0.1'
   database: login_app
   port: 3306
   username: root
